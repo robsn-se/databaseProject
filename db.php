@@ -1,7 +1,7 @@
 <?php
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
+//ini_set('display_errors', '1');
+//ini_set('display_startup_errors', '1');
+//error_reporting(E_ALL);
 const DB_HOST = "localhost";
 const DB_USER = "ruben";
 const DB_PASSWORD = "ser-1988";
@@ -19,19 +19,17 @@ try {
 
     if(isset($_POST['submit'])) {
         if(isset($_POST["name"]) && isset($_POST["age"])) {
-            $query = "INSERT INTO `users`(`name`, `age`) VALUES ('{$_POST["name"]}', '{$_POST["age"]}')";
-            if(mysqli_query($connect, $query))
-            {
+            if(mysqli_query($connect, "INSERT INTO `users`(`name`, `age`) VALUES ('{$_POST["name"]}', '{$_POST["age"]}')")) {
                 echo "Post added!";
             }
         }
     }
     if (isset($_POST["id"])) {
-        $userid = mysqli_real_escape_string($connect, $_POST["id"]);
-        $sql = "DELETE FROM `users` WHERE `id` = '$userid'";
-        if(mysqli_query($connect, $sql)){
+        if(mysqli_query($connect, "DELETE FROM `users` WHERE `id` = '{$_POST["id"]}'")){
+            echo "Data deleted";
             header("Location: index.php");
         }
+
     }
 }
 catch (\Exception $e) {

@@ -23,21 +23,22 @@ require_once "db.php";
 <div class="date" >
     <table class="list">
         <tr>
-            <th>Nme</th>
+            <th>ID</th>
+            <th>Name</th>
             <th>Age</th>
             <th>Note</th>
-
         </tr>
 <?php
-$selectData = mysqli_query($connect, "SELECT `name`, `age` FROM `users`");
-while($data = mysqli_fetch_assoc($selectData)) { ?>
+$selectData = mysqli_query($connect, "SELECT * FROM `users`");
+foreach($selectData as $data){ ?>
         <tr>
+            <td><?= $data['id'] ?></td>
             <td><?= $data['name'] ?></td>
             <td><?= $data['age'] ?></td>
             <td>
                 <form action='db.php' method='post'>
-                    <input type='hidden' name='id' >
-                    <input type='submit' value='delete'>
+                    <input type='hidden' name='id' value='<?= $data['id'] ?>'>
+                    <button type="submit">Deleted</button>
                 </form>
             </td>
         </tr>

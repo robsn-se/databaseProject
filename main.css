@@ -1,11 +1,12 @@
 
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/**, *::before, *::after {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    box-sizing: border-box;*/
+/*}*/
 
 body {
+    margin: 100px;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -62,7 +63,7 @@ body {
 
 .button {
     display: block;
-    min-width: 210px;
+    width: 52%;
     border: 2px solid transparent;
     border-radius: 6px;
     padding: 8px 15px;
@@ -91,8 +92,8 @@ body {
 }
 
 .list {
-    width: 197%;
-    margin: 20px 14px 30px 36px;
+    width: 175%;
+    margin: 26px 12px -22px;
     padding: 12px 6px;
 }
 
