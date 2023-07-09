@@ -1,0 +1,106 @@
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #18191C;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    flex-direction: column;
+}
+
+.form {
+    width: 630px;
+    margin: auto;
+}
+
+.input_label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input_label + .input_label {
+    margin-top: 25px;
+}
+
+.input_title {
+    margin-right: 35px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.input {
+    border: 1px solid #ffffff;
+    border-radius: 6px;
+    padding: 10px 15px;
+    background-color: transparent;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 300;
+}
+
+.input:focus {
+    border-color: #FF8630;
+    outline: none;
+}
+
+.input, .button {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.button {
+    display: block;
+    min-width: 210px;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    padding: 8px 15px;
+    margin-top: 25px;
+    margin-left: auto;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 300;
+    font-family: inherit;
+    transition: background-color 0.2s linear;
+}
+
+.button:hover {
+    background-color: #FFFFFF;
+    cursor: pointer;
+    transition: background-color 0.2s linear;
+}
+
+.button:focus, .button:focus-visible {
+    border: 2px solid #ffffff;
+    outline: none;
+}
+
+.button_orange {
+    background-color: #FF8630;
+}
+
+.list {
+    width: 197%;
+    margin: 20px 14px 30px 36px;
+    padding: 12px 6px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: center;
+}
