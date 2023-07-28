@@ -1,5 +1,6 @@
 <?php
 require_once "db.php";
+print_r($_POST["dataID"])
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +12,7 @@ require_once "db.php";
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
+<h5><?= @$_GET["note"] ?></h5>
 <form class="form" action="" method="post">
     <label class="input_label"><span class="input_title">Name</span>
         <input class="input" type="text" name="name" required="">
@@ -26,7 +28,8 @@ require_once "db.php";
             <th>ID</th>
             <th>Name</th>
             <th>Age</th>
-            <th>Note</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
 <?php
 $selectData = mysqli_query($connect, "SELECT * FROM `users`");
@@ -36,9 +39,15 @@ foreach($selectData as $data){ ?>
             <td><?= $data['name'] ?></td>
             <td><?= $data['age'] ?></td>
             <td>
-                <form action='db.php' method='post'>
+                <form action="" method='post'>
                     <input type='hidden' name='id' value='<?= $data['id'] ?>'>
-                    <button type="submit">Deleted</button>
+                    <button type="submit" name="delete">Deleted</button>
+                </form>
+            </td>
+            <td>
+                <form action='update.php?id=<?= $data['id'] ?>' method='post'>
+                    <input type='hidden' name='edit' value='<?= $data['id'] ?>'>
+                    <button type="submit">Update</button>
                 </form>
             </td>
         </tr>

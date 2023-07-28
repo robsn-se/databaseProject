@@ -20,17 +20,20 @@ try {
     if(isset($_POST['submit'])) {
         if(isset($_POST["name"]) && isset($_POST["age"])) {
             if(mysqli_query($connect, "INSERT INTO `users`(`name`, `age`) VALUES ('{$_POST["name"]}', '{$_POST["age"]}')")) {
-                echo "Post added!";
+                $_GET["note"] = "Post {$_POST["name"]} added!";
             }
         }
     }
-    if (isset($_POST["id"])) {
-        if(mysqli_query($connect, "DELETE FROM `users` WHERE `id` = '{$_POST["id"]}'")){
-            echo "Data deleted";
-            header("Location: index.php");
+    if(isset($_POST['delete'])) {
+        if (isset($_POST["id"])) {
+            if (mysqli_query($connect, "DELETE FROM `users` WHERE `id` = '{$_POST["id"]}'")) {
+                $_GET["note"] = "Data {$_POST["id"]} deleted ";
+            }
         }
-
     }
+
+
+
 }
 catch (\Exception $e) {
     print_r("{$e->getMessage()} | {$e->getFile()}({$e->getLine()}) \n{$e->getTraceAsString()} \n\n");

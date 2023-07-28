@@ -105,3 +105,17 @@ th, td {
     padding: 5px;
     text-align: center;
 }
+.main_page {
+    display: block;
+    width: 100%;
+    /*border: 2px solid transparent;*/
+    border-radius: 6px;
+    padding: 8px 15px;
+    margin-top: 25px;
+    margin-left: auto;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 300;
+    font-family: inherit;
+    transition: background-color 0.2s linear;
+}
