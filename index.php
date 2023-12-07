@@ -1,6 +1,5 @@
 <?php
 require_once "db.php";
-print_r($_POST["dataID"])
 ?>
 <!DOCTYPE html>
 <html lang="en">
